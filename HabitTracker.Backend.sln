@@ -3,9 +3,53 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AAF635BD-CAA1-4F7C-9E66-13C428627126}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8D1D81C1-2138-46B5-80CE-2E67C91A2F42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{17704A5F-7E23-44B0-8F39-7AC6539F917A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BA7A394D-47A5-4143-B091-CC73E33BD647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Domain", "HabitTracker.Domain\HabitTracker.Domain.csproj", "{646C8CFC-B250-44D3-BD52-CA1F4324D79B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Application", "HabitTracker.Application\HabitTracker.Application.csproj", "{78FE2680-7BC6-4080-89DD-BBB7B3C5836F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Persistence", "HabitTracker.Persistence\HabitTracker.Persistence.csproj", "{DC8F815A-7FA4-4C56-8224-5D1A6251EB02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.WebApi", "HabitTracker.WebApi\HabitTracker.WebApi.csproj", "{D635563C-AC48-4988-89F5-ABCFC36B5191}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{646C8CFC-B250-44D3-BD52-CA1F4324D79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646C8CFC-B250-44D3-BD52-CA1F4324D79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646C8CFC-B250-44D3-BD52-CA1F4324D79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646C8CFC-B250-44D3-BD52-CA1F4324D79B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78FE2680-7BC6-4080-89DD-BBB7B3C5836F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FE2680-7BC6-4080-89DD-BBB7B3C5836F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FE2680-7BC6-4080-89DD-BBB7B3C5836F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FE2680-7BC6-4080-89DD-BBB7B3C5836F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC8F815A-7FA4-4C56-8224-5D1A6251EB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8F815A-7FA4-4C56-8224-5D1A6251EB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8F815A-7FA4-4C56-8224-5D1A6251EB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8F815A-7FA4-4C56-8224-5D1A6251EB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D635563C-AC48-4988-89F5-ABCFC36B5191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D635563C-AC48-4988-89F5-ABCFC36B5191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D635563C-AC48-4988-89F5-ABCFC36B5191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D635563C-AC48-4988-89F5-ABCFC36B5191}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{646C8CFC-B250-44D3-BD52-CA1F4324D79B} = {AAF635BD-CAA1-4F7C-9E66-13C428627126}
+		{78FE2680-7BC6-4080-89DD-BBB7B3C5836F} = {AAF635BD-CAA1-4F7C-9E66-13C428627126}
+		{DC8F815A-7FA4-4C56-8224-5D1A6251EB02} = {8D1D81C1-2138-46B5-80CE-2E67C91A2F42}
+		{D635563C-AC48-4988-89F5-ABCFC36B5191} = {17704A5F-7E23-44B0-8F39-7AC6539F917A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {876D061A-9AF1-45F5-9199-03179D36E53E}
