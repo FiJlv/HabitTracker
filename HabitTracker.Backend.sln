@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BA7A394D-47A5-4143-B091-CC73E33BD647}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Domain", "HabitTracker.Domain\HabitTracker.Domain.csproj", "{646C8CFC-B250-44D3-BD52-CA1F4324D79B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.Domain", "HabitTracker.Domain\HabitTracker.Domain.csproj", "{646C8CFC-B250-44D3-BD52-CA1F4324D79B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Application", "HabitTracker.Application\HabitTracker.Application.csproj", "{78FE2680-7BC6-4080-89DD-BBB7B3C5836F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.Application", "HabitTracker.Application\HabitTracker.Application.csproj", "{78FE2680-7BC6-4080-89DD-BBB7B3C5836F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Persistence", "HabitTracker.Persistence\HabitTracker.Persistence.csproj", "{DC8F815A-7FA4-4C56-8224-5D1A6251EB02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.Persistence", "HabitTracker.Persistence\HabitTracker.Persistence.csproj", "{DC8F815A-7FA4-4C56-8224-5D1A6251EB02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.WebApi", "HabitTracker.WebApi\HabitTracker.WebApi.csproj", "{D635563C-AC48-4988-89F5-ABCFC36B5191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.WebApi", "HabitTracker.WebApi\HabitTracker.WebApi.csproj", "{D635563C-AC48-4988-89F5-ABCFC36B5191}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
