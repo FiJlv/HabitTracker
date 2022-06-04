@@ -11,7 +11,7 @@ namespace HabitTracker.Application
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddPersistance(
+        public static IServiceCollection AddApplication(
             this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
