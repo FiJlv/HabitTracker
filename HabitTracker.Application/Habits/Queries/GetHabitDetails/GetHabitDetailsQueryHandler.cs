@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HabitTracker.Application.Habits.Queries.GetHabitDetails
 {
-    public class GetHabitInstructionsQueryHandler
-        :IRequestHandler<GetHabitInstructionsQuery, HabitInstructionsVm> 
+    public class GetHabitDetailsQueryHandler
+        :IRequestHandler<GetHabitDetailsQuery, HabitDetailsVm> 
     {
         private readonly IHabitTrackerDbContext _dbContext;
         private readonly IMapper _mapper;
-        public GetHabitInstructionsQueryHandler(IHabitTrackerDbContext dbContext, 
+        public GetHabitDetailsQueryHandler(IHabitTrackerDbContext dbContext, 
             IMapper mapper) => ( _dbContext, _mapper) = (dbContext, mapper);
 
-        public async Task <HabitInstructionsVm> Handle(GetHabitInstructionsQuery request,
+        public async Task <HabitDetailsVm> Handle(GetHabitDetailsQuery request,
             CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Habits
@@ -32,7 +32,7 @@ namespace HabitTracker.Application.Habits.Queries.GetHabitDetails
                 throw new NotFoundException(nameof(Domain.Habit), request.Id);
             }
 
-            return _mapper.Map<HabitInstructionsVm>(entity); 
+            return _mapper.Map<HabitDetailsVm>(entity); 
         }
     }
 }

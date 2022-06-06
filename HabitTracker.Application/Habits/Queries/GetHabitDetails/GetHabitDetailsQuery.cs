@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HabitTracker.Application.Habits.Queries.GetHabitDetails
 {
-    public class GetHabitInstructionsQuery : IRequest<HabitInstructionsVm>
+    public class GetHabitDetailsQuery : IRequest<HabitDetailsVm>
     {
         public Guid UserId { get; set; }
         public Guid Id { get; set; }

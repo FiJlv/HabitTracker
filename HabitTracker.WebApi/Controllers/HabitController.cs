@@ -32,9 +32,9 @@ namespace HabitTracker.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<HabitInstructionsVm>> Get(Guid id)
+        public async Task<ActionResult<HabitDetailsVm>> Get(Guid id)
         {
-            var query = new GetHabitInstructionsQuery
+            var query = new GetHabitDetailsQuery
             {
                 UserId = UserId,
                 Id = id
