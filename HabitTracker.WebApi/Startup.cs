@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using HabitTracker.Application;
 using HabitTracker.Persistence;
 using Microsoft.Extensions.Configuration;
+using HabitTracker.WebApi.Middleware;
 
 namespace HabitTracker.WebApi
 {
@@ -53,6 +54,7 @@ namespace HabitTracker.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
