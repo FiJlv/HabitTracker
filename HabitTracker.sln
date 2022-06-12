@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.Persistence", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.WebApi", "HabitTracker.WebApi\HabitTracker.WebApi.csproj", "{D635563C-AC48-4988-89F5-ABCFC36B5191}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{142AE98D-F070-4C2A-894E-F06346D2E605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Identity", "HabitTracker.Identity\HabitTracker.Identity.csproj", "{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{D635563C-AC48-4988-89F5-ABCFC36B5191}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D635563C-AC48-4988-89F5-ABCFC36B5191}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D635563C-AC48-4988-89F5-ABCFC36B5191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,7 @@ Global
 		{78FE2680-7BC6-4080-89DD-BBB7B3C5836F} = {AAF635BD-CAA1-4F7C-9E66-13C428627126}
 		{DC8F815A-7FA4-4C56-8224-5D1A6251EB02} = {8D1D81C1-2138-46B5-80CE-2E67C91A2F42}
 		{D635563C-AC48-4988-89F5-ABCFC36B5191} = {17704A5F-7E23-44B0-8F39-7AC6539F917A}
+		{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E} = {142AE98D-F070-4C2A-894E-F06346D2E605}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {876D061A-9AF1-45F5-9199-03179D36E53E}
