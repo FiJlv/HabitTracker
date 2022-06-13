@@ -14,6 +14,7 @@ using HabitTracker.Application;
 using HabitTracker.Persistence;
 using Microsoft.Extensions.Configuration;
 using HabitTracker.WebApi.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace HabitTracker.WebApi
 {
@@ -45,6 +46,20 @@ namespace HabitTracker.WebApi
                     policy.AllowAnyOrigin();
                 });
             });
+
+            services.AddAuthentication(config =>
+            {
+                config.DefaultAuthenticateScheme =
+                        JwtBearerDefaults.AuthenticationScheme;
+                config.DefaultChallengeScheme =
+                      JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "https://localhost:44342/";
+                    options.Audience = "HabitTrakerWebAPI";
+                    options.RequireHttpsMetadata = false;
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -58,8 +73,8 @@ namespace HabitTracker.WebApi
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
-
-
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

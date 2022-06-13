@@ -1,17 +1,21 @@
 using HabitTracker.Identity.Data;
-using HabitTracker.Identity.Models;
+using IdentityServer4.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
+using HabitTracker.Identity.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace HabitTracker.Identity
 {
@@ -50,11 +54,15 @@ namespace HabitTracker.Identity
 
             services.ConfigureApplicationCookie(config =>
             {
-                config.Cookie.Name = "HabitTracker.Identity.Cookie";
+                config.Cookie.Name = "Notes.Identity.Cookie";
                 config.LoginPath = "/Auth/Login";
                 config.LogoutPath = "/Auth/Logut";
             });
+
+            services.AddControllersWithViews();
         }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -62,14 +70,17 @@ namespace HabitTracker.Identity
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(env.ContentRootPath, "Styles")),
+                RequestPath = "/styles"
+            });
             app.UseRouting();
             app.UseIdentityServer();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

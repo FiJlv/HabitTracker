@@ -5,6 +5,7 @@ using HabitTracker.Application.Habits.Commands.UpdateHabit;
 using HabitTracker.Application.Habits.Queries.GetHabitDetails;
 using HabitTracker.Application.Habits.Queries.GetHabitList;
 using HabitTracker.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace HabitTracker.WebApi.Controllers
         public HabitController(IMapper mapper) => _mapper = mapper;
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<HabitListVm>> GetAll()
         {
             var query = new GetHabitListQuery
@@ -32,6 +34,7 @@ namespace HabitTracker.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<HabitDetailsVm>> Get(Guid id)
         {
             var query = new GetHabitDetailsQuery
@@ -44,6 +47,7 @@ namespace HabitTracker.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateHabitDto createHabitDto)
         {
             var command = _mapper.Map<CreateHabitCommand>(createHabitDto);
@@ -53,6 +57,7 @@ namespace HabitTracker.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> Update([FromBody] UpdateHabitDto updateHabitDto)
         {
             var command = _mapper.Map<UpdateHabitCommand>(updateHabitDto);
@@ -62,6 +67,7 @@ namespace HabitTracker.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(Guid id)
         {
             var command = new DeleteHabitCommand
