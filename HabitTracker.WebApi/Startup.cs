@@ -15,6 +15,7 @@ using HabitTracker.Persistence;
 using Microsoft.Extensions.Configuration;
 using HabitTracker.WebApi.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.IO;
 
 namespace HabitTracker.WebApi
 {
@@ -60,6 +61,13 @@ namespace HabitTracker.WebApi
                     options.Audience = "HabitTrakerWebAPI";
                     options.RequireHttpsMetadata = false;
                 });
+
+            services.AddSwaggerGen(config =>
+            {
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                config.IncludeXmlComments(xmlPath);
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -68,7 +76,12 @@ namespace HabitTracker.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
+            {
+                config.RoutePrefix = string.Empty;
+                config.SwaggerEndpoint("swagger/v1/swagger.json", "HabitTracker API");
+            });
             app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();

@@ -3,6 +3,7 @@ using HabitTracker.Application.Common.Mappings;
 using HabitTracker.Application.Habits.Commands.CreateHabit;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace HabitTracker.WebApi.Models
 {
     public class CreateHabitDto : IMapWith<CreateHabitCommand>
     {
+        [Required]
         public string Title { get; set; }
         public string Instruction { get; set; }
 
