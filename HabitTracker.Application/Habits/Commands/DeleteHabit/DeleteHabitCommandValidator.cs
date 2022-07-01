@@ -16,6 +16,5 @@ namespace HabitTracker.Application.Habits.Commands.DeleteHabit
             RuleFor(deleteHabitCommand =>
              deleteHabitCommand.Id).NotEqual(Guid.Empty);
         }
-        
     }
 }

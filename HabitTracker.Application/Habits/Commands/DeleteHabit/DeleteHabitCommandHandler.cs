@@ -1,5 +1,6 @@
 ﻿using HabitTracker.Application.Common.Exceptions;
 using HabitTracker.Application.Interfaces;
+using HabitTracker.Domain;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,12 @@ namespace HabitTracker.Application.Habits.Commands.DeleteHabit
         public async Task<Unit> Handle (DeleteHabitCommand request,
             CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Habits.FindAsync(new object[] { request.Id }, cancellationToken);
+            var entity = await _dbContext.Habits
+                .FindAsync(new object[] { request.Id }, cancellationToken);
 
             if (entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundException(nameof(Domain.Habit), request.Id);
+                throw new NotFoundException(nameof(Habit), request.Id);
             }
 
             _dbContext.Habits.Remove(entity);
