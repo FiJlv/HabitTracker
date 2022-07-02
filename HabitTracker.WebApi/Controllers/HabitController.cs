@@ -16,8 +16,10 @@ using System.Threading.Tasks;
 
 namespace HabitTracker.WebApi.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/{version:apiVersion}/[controller]")]
     public class HabitController : BaseController
     {
         private readonly IMapper _mapper;
