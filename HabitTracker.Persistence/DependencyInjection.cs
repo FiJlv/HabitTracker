@@ -24,6 +24,7 @@ namespace HabitTracker.Persistence
             services.AddScoped<IHabitTrackerDbContext>(provider =>
                 provider.GetService<HabitTrackerDbContext>());
             return services; 
+
         }
     }   
 }

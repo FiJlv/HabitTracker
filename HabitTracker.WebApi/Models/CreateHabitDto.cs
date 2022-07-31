@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿    using AutoMapper;
 using HabitTracker.Application.Common.Mappings;
 using HabitTracker.Application.Habits.Commands.CreateHabit;
 using System;

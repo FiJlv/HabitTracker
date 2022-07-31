@@ -26,11 +26,11 @@ namespace HabitTracker.Identity.Data
             builder.Entity<IdentityUserClaim<string>>(entity =>
                 entity.ToTable(name: "UserClaim"));
             builder.Entity<IdentityUserLogin<string>>(entity =>
-                entity.ToTable(name: "UserLogins"));
+                entity.ToTable("UserLogins"));
             builder.Entity<IdentityUserToken<string>>(entity =>
-                entity.ToTable(name: "UserTokens"));
+                entity.ToTable("UserTokens"));
             builder.Entity<IdentityRoleClaim<string>>(entity =>
-                entity.ToTable(name: "RoleClaims"));
+                entity.ToTable("RoleClaims"));
 
             builder.ApplyConfiguration(new AppUserConfiguration());
         }

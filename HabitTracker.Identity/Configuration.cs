@@ -14,7 +14,7 @@ namespace HabitTracker.Identity
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("HabitTrackerWebApi", "Web API")
+                new ApiScope("HabitTrackerWebAPI", "Web API")
             };
 
         public static IEnumerable<IdentityResource> IdentityResources =>
@@ -27,10 +27,10 @@ namespace HabitTracker.Identity
         public static IEnumerable<ApiResource> ApiResources =>
           new List<ApiResource>
           {
-                new ApiResource("HabitTrackerWebApI", "Web API", new []
+                new ApiResource("HabitTrackerWebAPI", "Web API", new []
                 { JwtClaimTypes.Name })
                 {
-                    Scopes ={ "HabitTrackerWebApi" }
+                    Scopes ={ "HabitTrackerWebAPI" }
                 }
           };
 
@@ -39,28 +39,28 @@ namespace HabitTracker.Identity
          {
                 new Client
                 {
-                    ClientId = "habittracker-web-api",
+                    ClientId = "habittracker-web-app",
                     ClientName =  "HabitTracker Web",
                      AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,
                     RedirectUris =
                     {
-                        "http://.../signin-oidc"
+                        "http://localhost:3000/signin-oidc"
                     },
                     AllowedCorsOrigins =
                     {
-                        "http://..."
+                        "http://localhost:3000" 
                     },
                     PostLogoutRedirectUris =
                     {
-                        "http:/.../signout-oidc"
+                        "http://localhost:3000/signout-oidc"
                     },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "HabitTrackerWebApI"
+                        "HabitTrackerWebAPI"
                     },
                     AllowAccessTokensViaBrowser = true
                 }

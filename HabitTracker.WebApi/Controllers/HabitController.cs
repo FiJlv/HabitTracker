@@ -37,10 +37,10 @@ namespace HabitTracker.WebApi.Controllers
         /// <response code="401">If the user is unauthorized</response>
         [HttpGet]
         [Authorize]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<HabitListVm>> GetAll()
-        {
+        {   
             var query = new GetHabitListQuery
             {
                 UserId = UserId
@@ -98,8 +98,8 @@ namespace HabitTracker.WebApi.Controllers
         {
             var command = _mapper.Map<CreateHabitCommand>(createHabitDto);
             command.UserId = UserId;
-            var noteId = await Mediator.Send(command);
-            return Ok(noteId);
+            var habitId = await Mediator.Send(command);
+            return Ok(habitId);
         }
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace HabitTracker.Application.Habits.Commands.CreateHabit
                 UserId = request.UserId,
                 Title = request.Title,
                 Instruction = request.Instruction,
+                Id = Guid.NewGuid(),
                 HabitDays = request.HabitDays,
                 CreationDate = DateTime.Now
             };

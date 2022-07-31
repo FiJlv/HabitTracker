@@ -25,9 +25,9 @@ namespace HabitTracker.Application.Habits.Queries.GetHabitList
             CancellationToken cancellationToken)
         {
             var habitsQuery = await _dbContext.Habits
-                .Where(note => note.UserId == request.UserId)
+                .Where(habit => habit.UserId == request.UserId)
                 .ProjectTo<HabitLookupDto>(_mapper.ConfigurationProvider)
-                .ToListAsync(cancellationToken);
+                .ToListAsync(cancellationToken); 
 
             return new HabitListVm { Habits = habitsQuery };            
         }
