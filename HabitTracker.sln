@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31025.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AAF635BD-CAA1-4F7C-9E66-13C428627126}"
 EndProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{14
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.Identity", "HabitTracker.Identity\HabitTracker.Identity.csproj", "{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Tests", "HabitTracker.Tests\HabitTracker.Tests.csproj", "{B2AB03B7-54EC-43CA-A785-13395342ABBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker.Tests", "HabitTracker.Tests\HabitTracker.Tests.csproj", "{B2AB03B7-54EC-43CA-A785-13395342ABBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +64,7 @@ Global
 		{78FE2680-7BC6-4080-89DD-BBB7B3C5836F} = {AAF635BD-CAA1-4F7C-9E66-13C428627126}
 		{DC8F815A-7FA4-4C56-8224-5D1A6251EB02} = {8D1D81C1-2138-46B5-80CE-2E67C91A2F42}
 		{D635563C-AC48-4988-89F5-ABCFC36B5191} = {17704A5F-7E23-44B0-8F39-7AC6539F917A}
+		{142AE98D-F070-4C2A-894E-F06346D2E605} = {8D1D81C1-2138-46B5-80CE-2E67C91A2F42}
 		{50F75FF9-D7E1-4506-A736-0AC8F3A41B8E} = {142AE98D-F070-4C2A-894E-F06346D2E605}
 		{B2AB03B7-54EC-43CA-A785-13395342ABBE} = {BA7A394D-47A5-4143-B091-CC73E33BD647}
 	EndGlobalSection

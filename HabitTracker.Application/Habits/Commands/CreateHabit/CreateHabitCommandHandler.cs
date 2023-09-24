@@ -10,21 +10,21 @@ using System.Threading;
 
 namespace HabitTracker.Application.Habits.Commands.CreateHabit
 {
-    public class CreateHabitCommandHandler : IRequestHandler<CreateHabitCommand,Guid>
+    public class CreateHabitCommandHandler : IRequestHandler<CreateHabitCommand, Guid>
     {
         private readonly IHabitTrackerDbContext _dbContext;
         public CreateHabitCommandHandler(IHabitTrackerDbContext dbContext) => _dbContext = dbContext;
-        public async Task<Guid> Handle(CreateHabitCommand request, CancellationToken cancellationToken) 
+        public async Task<Guid> Handle(CreateHabitCommand request, CancellationToken cancellationToken)
         {
-           
+
             var habit = new Habit
             {
                 UserId = request.UserId,
                 Title = request.Title,
                 Instruction = request.Instruction,
-                Id = Guid.NewGuid(),
                 HabitDays = request.HabitDays,
-                CreationDate = DateTime.Now
+                Id = Guid.NewGuid(),
+                CreationDate = DateTime.Now,
             };
 
             await _dbContext.Habits.AddAsync(habit, cancellationToken);

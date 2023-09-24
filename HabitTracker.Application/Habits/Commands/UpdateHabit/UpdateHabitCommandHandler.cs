@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using HabitTracker.Application.Interfaces;
 using MediatR;
 using HabitTracker.Application.Common.Exceptions;
+using HabitTracker.Domain;
 
 namespace HabitTracker.Application.Habits.Commands.UpdateHabit
 {
-    public class UpdateHabitCommandHandler : IRequest<UpdateHabitCommand>
+    public class UpdateHabitCommandHandler : IRequestHandler<UpdateHabitCommand>
     {
         private readonly IHabitTrackerDbContext _dbContext;
         public UpdateHabitCommandHandler(IHabitTrackerDbContext dbContext) => _dbContext = dbContext;
@@ -19,7 +20,7 @@ namespace HabitTracker.Application.Habits.Commands.UpdateHabit
 
             if(entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundException(nameof(Domain.Habit), request.Id);
+                throw new NotFoundException(nameof(Habit), request.Id);
             }
 
             entity.Instruction = request.Instruction;

@@ -19,6 +19,7 @@ using System.IO;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using HabitTracker.WebApi.Services;
 
 namespace HabitTracker.WebApi
 {
@@ -61,8 +62,8 @@ namespace HabitTracker.WebApi
                 .AddJwtBearer("Bearer", options =>
                 {
                     options.Authority = "https://localhost:44342/";
-                    options.Audience = "HabitTrakerWebAPI";
-                    options.RequireHttpsMetadata = false;
+                    options.Audience = "HabitTrackerWebAPI";
+                    options.RequireHttpsMetadata = false; 
                 });
 
             services.AddVersionedApiExplorer(options =>
@@ -74,6 +75,9 @@ namespace HabitTracker.WebApi
 
             services.AddSwaggerGen();
             services.AddApiVersioning();
+
+            services.AddSingleton<ICurrentUserService, CurrentUserService>();
+            services.AddHttpContextAccessor();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,

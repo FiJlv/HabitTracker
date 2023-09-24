@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using HabitTracker.Application.Common.Mappings;
 using HabitTracker.Application.Habits.Commands.UpdateHabit;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HabitTracker.WebApi.Models
 {
-    public class UpdateHabitDto
+    public class UpdateHabitDto : IMapWith<UpdateHabitCommand>
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
