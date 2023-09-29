@@ -95,6 +95,7 @@ namespace HabitTracker.Identity.Controllers
         {
             await _signInManager.SignOutAsync();
             var logoutRequest = await _interactionService.GetLogoutContextAsync(logoutId);
+
             return Redirect(logoutRequest.PostLogoutRedirectUri);
         }
     }

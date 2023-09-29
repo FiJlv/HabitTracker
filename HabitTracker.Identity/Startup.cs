@@ -56,7 +56,7 @@ namespace HabitTracker.Identity
             {
                 config.Cookie.Name = "HabitTracker.Identity.Cookie";
                 config.LoginPath = "/Auth/Login";
-                config.LogoutPath = "/Auth/Logut";
+                config.LogoutPath = "/Auth/Logout";
             });
 
             services.AddControllersWithViews();

@@ -1,0 +1,436 @@
+2023-09-30 00:26:49.826 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-09-30 00:26:49.988 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Habits" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_Habits" PRIMARY KEY,
+    "UserId" TEXT NOT NULL,
+    "Title" TEXT NULL,
+    "Instruction" TEXT NULL,
+    "HabitDays" TEXT NULL,
+    "CreationDate" TEXT NOT NULL
+);
+2023-09-30 00:26:49.989 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Habits_Id" ON "Habits" ("Id");
+2023-09-30 00:26:50.037 +03:00 [INF] User profile is available. Using 'C:\Users\Vladyslav\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-30 00:26:50.554 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-30 00:26:50.554 +03:00 [INF] Hosting environment: Development
+2023-09-30 00:26:50.557 +03:00 [INF] Content root path: C:\Users\Vladyslav\source\repos\HabitTracker\HabitTracker.WebApi
+2023-09-30 00:26:50.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/index.html - -
+2023-09-30 00:26:50.958 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/index.html - - - 200 - text/html;charset=utf-8 364.3542ms
+2023-09-30 00:26:51.045 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/_framework/aspnetcore-browser-refresh.js - -
+2023-09-30 00:26:51.055 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 5.9307ms
+2023-09-30 00:26:51.062 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/_vs/browserLink - -
+2023-09-30 00:26:51.116 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.9761ms
+2023-09-30 00:26:51.571 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/swagger/v1/swagger.json - -
+2023-09-30 00:26:51.735 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.2771ms
+2023-09-30 00:27:08.626 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/index.html - -
+2023-09-30 00:27:08.638 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/index.html - - - 200 - text/html;charset=utf-8 12.0957ms
+2023-09-30 00:27:08.701 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/_framework/aspnetcore-browser-refresh.js - -
+2023-09-30 00:27:08.703 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 1.4696ms
+2023-09-30 00:27:08.751 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/_vs/browserLink - -
+2023-09-30 00:27:08.798 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 46.9609ms
+2023-09-30 00:27:09.094 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/swagger/v1/swagger.json - -
+2023-09-30 00:27:09.107 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.7428ms
+2023-09-30 00:27:13.018 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:13.018 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:13.062 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:13.062 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:13.065 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 47.5932ms
+2023-09-30 00:27:13.065 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 47.5419ms
+2023-09-30 00:27:13.068 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:13.073 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:13.711 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:13.732 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:27:13.912 +03:00 [INF] Habits Request: GetHabitListQuery "cb4c1ab0-0920-4704-af91-777523ea6eaf" {"UserId":"cb4c1ab0-0920-4704-af91-777523ea6eaf","$type":"GetHabitListQuery"}
+2023-09-30 00:27:14.309 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:27:14.329 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:27:14.343 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:14.344 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:14.346 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 609.8036ms
+2023-09-30 00:27:14.347 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:14.349 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:14.349 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:27:14.352 +03:00 [INF] Habits Request: GetHabitListQuery "cb4c1ab0-0920-4704-af91-777523ea6eaf" {"UserId":"cb4c1ab0-0920-4704-af91-777523ea6eaf","$type":"GetHabitListQuery"}
+2023-09-30 00:27:14.353 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 1285.0904ms
+2023-09-30 00:27:14.431 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:27:14.433 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:27:14.434 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 84.2786ms
+2023-09-30 00:27:14.434 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:14.434 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 91.1773ms
+2023-09-30 00:27:36.085 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:36.086 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:36.086 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:36.087 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:36.093 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 6.6378ms
+2023-09-30 00:27:36.094 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 7.8652ms
+2023-09-30 00:27:36.102 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:36.103 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:36.108 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:36.109 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:27:36.111 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:27:36.116 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:27:36.116 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:27:36.117 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 8.2445ms
+2023-09-30 00:27:36.117 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:36.117 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 14.9902ms
+2023-09-30 00:27:36.118 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:27:36.119 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:27:36.119 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:36.120 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:27:36.120 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:27:36.121 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:27:36.121 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:27:36.121 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 1.7842ms
+2023-09-30 00:27:36.122 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:27:36.122 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 3.2212ms
+2023-09-30 00:28:47.309 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:28:47.309 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:28:47.310 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 0.6093ms
+2023-09-30 00:28:47.311 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44391/api/1.0/Habit application/json 95
+2023-09-30 00:28:47.312 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:28:47.313 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Create (HabitTracker.WebApi)'
+2023-09-30 00:28:47.327 +03:00 [INF] Route matched with {action = "Create", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(HabitTracker.WebApi.Models.CreateHabitDto) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:28:47.408 +03:00 [INF] Habits Request: CreateHabitCommand "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Title":"Training","Instruction":"Strength exercises for an hour","HabitDays":"5 days a week","$type":"CreateHabitCommand"}
+2023-09-30 00:28:47.641 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 13), @p3='?' (Size = 30), @p4='?' (Size = 8), @p5='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Habits" ("Id", "CreationDate", "HabitDays", "Instruction", "Title", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-09-30 00:28:47.663 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2023-09-30 00:28:47.665 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Create (HabitTracker.WebApi) in 337.7814ms
+2023-09-30 00:28:47.665 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Create (HabitTracker.WebApi)'
+2023-09-30 00:28:47.665 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44391/api/1.0/Habit application/json 95 - 200 - application/json;+charset=utf-8 353.9852ms
+2023-09-30 00:28:47.678 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:28:47.678 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:28:47.679 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:28:47.679 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:28:47.680 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:28:47.681 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:28:47.687 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:28:47.689 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 9.9917ms
+2023-09-30 00:28:47.689 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:28:47.690 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 11.5547ms
+2023-09-30 00:28:53.683 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:28:53.684 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:28:53.684 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 204 - - 0.6946ms
+2023-09-30 00:28:53.686 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:28:53.686 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:28:53.687 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:28:53.692 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:28:53.702 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:28:53.743 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:28:53.754 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:28:53.765 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 72.4905ms
+2023-09-30 00:28:53.765 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:28:53.765 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 79.2606ms
+2023-09-30 00:29:02.817 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:02.817 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:02.818 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 204 - - 0.4926ms
+2023-09-30 00:29:02.819 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:02.819 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:02.820 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:02.820 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:29:02.823 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:29:02.825 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:29:02.827 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:29:02.827 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 7.1127ms
+2023-09-30 00:29:02.827 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:02.828 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 8.5414ms
+2023-09-30 00:29:08.681 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:08.681 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:08.681 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 204 - - 0.5651ms
+2023-09-30 00:29:08.683 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:08.683 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:08.684 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:08.684 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:29:08.686 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:29:08.688 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:29:08.688 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:29:08.689 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 4.8074ms
+2023-09-30 00:29:08.689 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:08.689 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 6.3046ms
+2023-09-30 00:29:10.225 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:10.225 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:10.226 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:10.226 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:29:10.227 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:29:10.228 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:29:10.228 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:29:10.229 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 2.6941ms
+2023-09-30 00:29:10.229 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:10.229 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 4.4702ms
+2023-09-30 00:29:11.665 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:11.666 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:11.666 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:11.667 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:29:11.667 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:29:11.668 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:29:11.669 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:29:11.669 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 2.3138ms
+2023-09-30 00:29:11.669 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:11.669 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 4.0419ms
+2023-09-30 00:29:43.715 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:29:43.716 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:43.720 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 4.9376ms
+2023-09-30 00:29:43.721 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:44391/api/1.0/Habit application/json 73
+2023-09-30 00:29:43.721 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:43.722 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Update (HabitTracker.WebApi)'
+2023-09-30 00:29:43.728 +03:00 [INF] Route matched with {action = "Update", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HabitTracker.WebApi.Models.UpdateHabitDto) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:29:43.758 +03:00 [INF] Habits Request: UpdateHabitCommand "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","Title":"Strength training","Instruction":null,"HabitDays":null,"$type":"UpdateHabitCommand"}
+2023-09-30 00:29:43.761 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:29:43.773 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?', @p1='?', @p2='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Habits" SET "HabitDays" = @p0, "Instruction" = @p1, "Title" = @p2
+WHERE "Id" = @p3
+RETURNING 1;
+2023-09-30 00:29:43.793 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-09-30 00:29:43.793 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Update (HabitTracker.WebApi) in 65.6815ms
+2023-09-30 00:29:43.794 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Update (HabitTracker.WebApi)'
+2023-09-30 00:29:43.794 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:44391/api/1.0/Habit application/json 73 - 204 - - 72.8147ms
+2023-09-30 00:29:43.807 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:29:43.807 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:43.808 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:29:43.808 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:29:43.808 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:29:43.810 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:29:43.810 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:29:43.811 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 2.3771ms
+2023-09-30 00:29:43.811 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:29:43.811 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 3.8288ms
+2023-09-30 00:29:44.828 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:44.828 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:44.828 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 204 - - 0.6708ms
+2023-09-30 00:29:44.830 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:29:44.831 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:29:44.832 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:44.832 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:29:44.833 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:29:44.834 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:29:44.835 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:29:44.836 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 3.7615ms
+2023-09-30 00:29:44.836 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:29:44.836 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 5.7039ms
+2023-09-30 00:30:58.811 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:30:58.812 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:30:58.812 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 0.8583ms
+2023-09-30 00:30:58.814 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:44391/api/1.0/Habit application/json 148
+2023-09-30 00:30:58.814 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:30:58.815 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Update (HabitTracker.WebApi)'
+2023-09-30 00:30:58.815 +03:00 [INF] Route matched with {action = "Update", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HabitTracker.WebApi.Models.UpdateHabitDto) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:30:58.821 +03:00 [INF] Habits Request: UpdateHabitCommand "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","Title":"Strength training","Instruction":"Strength exercises for an hour","HabitDays":"5 days a week","$type":"UpdateHabitCommand"}
+2023-09-30 00:30:58.827 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:30:58.828 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 13), @p1='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Habits" SET "HabitDays" = @p0, "Instruction" = @p1
+WHERE "Id" = @p2
+RETURNING 1;
+2023-09-30 00:30:58.834 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-09-30 00:30:58.834 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Update (HabitTracker.WebApi) in 19.095ms
+2023-09-30 00:30:58.834 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Update (HabitTracker.WebApi)'
+2023-09-30 00:30:58.835 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:44391/api/1.0/Habit application/json 148 - 204 - - 21.4345ms
+2023-09-30 00:30:58.842 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:30:58.842 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:30:58.843 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:30:58.843 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:30:58.843 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:30:58.844 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:30:58.844 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:30:58.845 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 1.9774ms
+2023-09-30 00:30:58.845 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:30:58.845 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 3.3860ms
+2023-09-30 00:31:01.017 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:31:01.018 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:01.018 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 204 - - 0.4992ms
+2023-09-30 00:31:01.020 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:31:01.020 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:01.021 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:31:01.021 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:31:01.021 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:31:01.023 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:31:01.023 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:31:01.024 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 2.4337ms
+2023-09-30 00:31:01.024 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:31:01.024 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 4.0783ms
+2023-09-30 00:31:05.537 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:31:05.538 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:05.538 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:31:05.539 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:31:05.539 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:31:05.540 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:31:05.540 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:31:05.541 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 2.2276ms
+2023-09-30 00:31:05.541 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:31:05.541 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 3.8359ms
+2023-09-30 00:31:23.382 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:23.383 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:23.383 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:23.383 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:23.383 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 0.7315ms
+2023-09-30 00:31:23.383 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 0.4864ms
+2023-09-30 00:31:23.385 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:23.385 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:23.387 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-30 00:31:23.393 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-30 00:31:23.394 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 401 - - 9.1623ms
+2023-09-30 00:31:23.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:23.395 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:23.395 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-30 00:31:23.396 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-30 00:31:23.396 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 401 - - 1.2328ms
+2023-09-30 00:31:34.604 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:34.604 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:34.604 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:34.604 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:34.605 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 0.5808ms
+2023-09-30 00:31:34.605 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 0.7911ms
+2023-09-30 00:31:34.607 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:34.607 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:34.608 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:31:34.608 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:31:34.608 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:31:34.609 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:31:34.610 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:31:34.610 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 2.5532ms
+2023-09-30 00:31:34.610 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:31:34.611 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 3.9405ms
+2023-09-30 00:31:34.612 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:31:34.612 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:34.613 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:31:34.613 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:31:34.613 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:31:34.614 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:31:34.614 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:31:34.615 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 1.7174ms
+2023-09-30 00:31:34.615 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:31:34.615 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 3.2213ms
+2023-09-30 00:31:35.522 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:31:35.522 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:35.522 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 204 - - 0.3903ms
+2023-09-30 00:31:35.524 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:31:35.524 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:31:35.524 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:31:35.525 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:31:35.525 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:31:35.526 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:31:35.527 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:31:35.527 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 2.4571ms
+2023-09-30 00:31:35.527 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:31:35.527 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 3.6893ms
+2023-09-30 00:32:31.970 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:32:31.970 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:32:31.971 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 204 - - 0.9388ms
+2023-09-30 00:32:31.977 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - -
+2023-09-30 00:32:31.977 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:32:31.978 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:32:31.978 +03:00 [INF] Route matched with {action = "Get", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm]] Get(System.Guid) on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:32:31.978 +03:00 [INF] Habits Request: GetHabitDetailsQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","Id":"2da59047-d8ba-4f46-ac97-0d5d1e6435c0","$type":"GetHabitDetailsQuery"}
+2023-09-30 00:32:31.981 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."CreationDate", "h"."HabitDays", "h"."Instruction", "h"."Title", "h"."UserId"
+FROM "Habits" AS "h"
+WHERE "h"."Id" = @__request_Id_0
+LIMIT 1
+2023-09-30 00:32:31.984 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitDetails.HabitDetailsVm'.
+2023-09-30 00:32:31.985 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi) in 7.2099ms
+2023-09-30 00:32:31.985 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.Get (HabitTracker.WebApi)'
+2023-09-30 00:32:31.985 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit/2da59047-d8ba-4f46-ac97-0d5d1e6435c0 - - - 200 - application/json;+charset=utf-8 8.6165ms
+2023-09-30 00:33:03.105 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:33:03.105 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:33:03.106 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 0.5744ms
+2023-09-30 00:33:03.106 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:33:03.106 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:33:03.107 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44391/api/1.0/Habit - - - 204 - - 1.0228ms
+2023-09-30 00:33:03.114 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:33:03.114 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:33:03.115 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:33:03.115 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:33:03.115 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:33:03.116 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:33:03.117 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:33:03.117 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 1.9584ms
+2023-09-30 00:33:03.117 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:33:03.117 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 3.1795ms
+2023-09-30 00:33:03.118 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44391/api/1.0/Habit - -
+2023-09-30 00:33:03.118 +03:00 [INF] CORS policy execution successful.
+2023-09-30 00:33:03.119 +03:00 [INF] Executing endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:33:03.119 +03:00 [INF] Route matched with {action = "GetAll", controller = "Habit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm]] GetAll() on controller HabitTracker.WebApi.Controllers.HabitController (HabitTracker.WebApi).
+2023-09-30 00:33:03.119 +03:00 [INF] Habits Request: GetHabitListQuery "b2530915-166d-4719-839c-5e37157d3602" {"UserId":"b2530915-166d-4719-839c-5e37157d3602","$type":"GetHabitListQuery"}
+2023-09-30 00:33:03.120 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "h"."Id", "h"."Title"
+FROM "Habits" AS "h"
+WHERE "h"."UserId" = @__request_UserId_0
+2023-09-30 00:33:03.120 +03:00 [INF] Executing OkObjectResult, writing value of type 'HabitTracker.Application.Habits.Queries.GetHabitList.HabitListVm'.
+2023-09-30 00:33:03.120 +03:00 [INF] Executed action HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi) in 1.3805ms
+2023-09-30 00:33:03.120 +03:00 [INF] Executed endpoint 'HabitTracker.WebApi.Controllers.HabitController.GetAll (HabitTracker.WebApi)'
+2023-09-30 00:33:03.121 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44391/api/1.0/Habit - - - 200 - application/json;+charset=utf-8 2.3161ms

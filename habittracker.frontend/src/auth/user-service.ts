@@ -20,13 +20,19 @@ export async function loadUser() {
 
 export const signinRedirect = () => userManager.signinRedirect();
 
-export const signinRedirectCallback = () =>
-    userManager.signinRedirectCallback();
+export const signinRedirectCallback = () => {
+    return userManager.signinRedirectCallback().then((user) => {
+        localStorage.setItem('id_token', user.id_token);
+    });
+};
 
 export const signoutRedirect = (args?: any) => {
     userManager.clearStaleState();
     userManager.removeUser();
-    return userManager.signoutRedirect(args);
+    const idToken = localStorage.getItem('id_token');
+    if (idToken) {
+        return userManager.signoutRedirect({ id_token_hint: idToken });
+    }
 };
 
 export const signoutRedirectCallback = () => {

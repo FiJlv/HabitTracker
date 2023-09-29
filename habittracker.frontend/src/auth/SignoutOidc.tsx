@@ -5,7 +5,7 @@ import { signoutRedirectCallback } from './user-service';
 const SignoutOidc: FC<{}> = () => {
     const navigate = useNavigate();
     useEffect(() => {
-        const signoutAsync = async () => {
+        async function signoutAsync() {
             await signoutRedirectCallback();
             navigate('/');
         };

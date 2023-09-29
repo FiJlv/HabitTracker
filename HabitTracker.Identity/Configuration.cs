@@ -41,7 +41,7 @@ namespace HabitTracker.Identity
                 {
                     ClientId = "habittracker-web-app",
                     ClientName =  "HabitTracker Web",
-                     AllowedGrantTypes = GrantTypes.Code,
+                    AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,
                     RedirectUris =

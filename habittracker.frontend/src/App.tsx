@@ -13,19 +13,17 @@ const App: FC<{}> = (): ReactElement => {
         <div className="App">
             <header className="App-header"> 
                 <button onClick={() => signinRedirect()}>Login</button>
+                <button onClick={() => signoutRedirect()}>Logout</button>
                 <AuthProvider userManager={userManager}>
-                    <Router>
+                    <Router>    
                         <Routes>
                             <Route path="/" element={<HabitList/>} />
-                            <Route
-                                path="/signout-oidc"
-                                element={<SignOutOidc/>}
-                            />
+                            <Route path="/signout-oidc"element={<SignOutOidc/>}/>
                             <Route path="/signin-oidc" element={<SignInOidc/>} />
                         </Routes>
                     </Router>
                 </AuthProvider>
-            </header>
+            </header> 
         </div>
     );
 };

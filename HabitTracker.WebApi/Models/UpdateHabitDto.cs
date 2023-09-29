@@ -15,6 +15,8 @@ namespace HabitTracker.WebApi.Models
         public string Title { get; set; }
         public string Instruction { get; set; }
 
+        public string HabitDays { get; set; }
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<UpdateHabitDto, UpdateHabitCommand>()
@@ -23,7 +25,9 @@ namespace HabitTracker.WebApi.Models
                 .ForMember(habitCommand => habitCommand.Title,
                     opt => opt.MapFrom(habitDto => habitDto.Title))
                 .ForMember(habitCommand => habitCommand.Instruction,
-                    opt => opt.MapFrom(habitDto => habitDto.Instruction));
+                    opt => opt.MapFrom(habitDto => habitDto.Instruction))
+                .ForMember(habitCommand => habitCommand.HabitDays,
+                    opt => opt.MapFrom(habitDto => habitDto.HabitDays));
         }
     }
 }
