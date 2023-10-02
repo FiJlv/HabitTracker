@@ -11,10 +11,10 @@ Full technology stack:
 Run the React app (using VS Code), the identity server, and the web API itself.
 
 
-![Main](https://github.com/FiJlv/HabitTracker/blob/master/Screenshots/1.png)
+![Main](https://github.com/FiJlv/HabitTracker/blob/main/Screenshots/1.png)
 
 
-![Edit habit](https://github.com/FiJlv/HabitTracker/blob/master/Screenshots/2.png)
+![Edit habit](https://github.com/FiJlv/HabitTracker/blob/main/Screenshots/2.png)
 
 
-![Registration](https://github.com/FiJlv/HabitTracker/blob/master/Screenshots/3.png)
+![Registration](https://github.com/FiJlv/HabitTracker/blob/main/Screenshots/3.png)
