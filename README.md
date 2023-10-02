@@ -2,9 +2,19 @@ I want to present a web api for working with habits, for which I created a separ
 
 Full technology stack: 
 - ASP.NET Core, REST
-- SQLite, Entity Framework, Identity Server
-- Swagger, Fluent Validation, XUnit, Automapper 
+- SQLite, Entity Framework
+- OAuth 2.0, OpenID Connect, Identity Server
+- Swagger, Fluent Validation, XUnit, Automapper, Serilog
 - NSwag Studio, React, TS 
 - Used the MediatR library in combination with CQRS to implement a scalable system that can be easily and quickly modified
 
 Run the React app (using VS Code), the identity server, and the web API itself.
+
+
+![Main](https://github.com/FiJlv/HabitTracker/blob/master/Screenshots/1.png)
+
+
+![Edit habit](https://github.com/FiJlv/HabitTracker/blob/master/Screenshots/2.png)
+
+
+![Registration](https://github.com/FiJlv/HabitTracker/blob/master/Screenshots/3.png)

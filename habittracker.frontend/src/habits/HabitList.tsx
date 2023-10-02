@@ -1,5 +1,6 @@
 import { FC, ReactElement, useRef, useEffect, useState } from 'react';
-import { FormControl, Button, Modal, Form } from 'react-bootstrap'; 
+import './HabitList.css'
+import { FormControl, Button, Modal, Form } from 'react-bootstrap'; // мешает стилизации
 import { CreateHabitDto, UpdateHabitDto, Client, HabitDetailsVm } from '../api/api';
 
 const API_URL = 'https://localhost:44391';
@@ -100,61 +101,67 @@ const HabitList: FC<{}> = (): ReactElement => {
     };
 
     return (
+    <div>
+  
         <div>
-            Habits
-            <div>
-                <FormControl ref={titleInput} placeholder="Title" />
-                <FormControl ref={instructionInput} placeholder="Instructions" />
-                <FormControl ref={habitDaysInput} placeholder="Habit days" />
-                <Button variant="primary" onClick={handleCreateHabit}>
-                    Create Habit
-                </Button>
-            </div>
-            <section>
-                {habits?.map((habit) => (
-                    <div>
-                        {habit.title}
-                        <Button variant="danger" onClick={() => handleDelete(habit.id)}>Delete</Button>
-                        <Button variant="info" onClick={() => handleToggleDetails(habit.id || '')}> 
-                        {selectedHabit && selectedHabit.id === habit.id ? 'Hide Details' : 'Show Details'}
-                         </Button>
-                         <Button variant="primary" onClick={() => handleEdit(habit)}>Edit</Button>
-                    </div>
-                ))}
-            </section>
-            {selectedHabit && (
-            <div>
-                <h3>Habit Details</h3>
-                <p>Title: {selectedHabit.title}</p>
-                <p>Instruction: {selectedHabit.instruction}</p>
-                <p>Habit days: {selectedHabit.habitDays}</p>
-                <p>Creation date: {selectedHabit.creationDate ? new Date(selectedHabit.creationDate).toDateString() : 'N/A'}</p>
-            </div>
-        )}
-        <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
-                <Modal.Title>Edit Habit</Modal.Title>
-                    <Modal.Body>
-                      <Form>
-                          <Form.Group controlId="editTitle">
-                              <Form.Label>Title</Form.Label>
-                              <Form.Control type="text" placeholder="Enter a new title" onChange={(e) => setUpdateHabit({ ...updateHabit, title: e.target.value })} />
-                          </Form.Group>
-                          <Form.Group controlId="editInstruction">
-                              <Form.Label>Instruction</Form.Label>
-                              <Form.Control type="text" placeholder="Enter new instructions" onChange={(e) => setUpdateHabit({ ...updateHabit, instruction: e.target.value })} />
-                          </Form.Group>
-                          <Form.Group controlId="editHabitDays">
-                              <Form.Label>Habit Days</Form.Label>
-                              <Form.Control type="text" placeholder="Enter new habit days" onChange={(e) => setUpdateHabit({ ...updateHabit, habitDays: e.target.value })} />
-                          </Form.Group>
-                      </Form>
-                  </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowEditModal(false)}>Close</Button>
-                    <Button variant="primary" onClick={handleUpdateHabit}>Save Changes</Button>
-                </Modal.Footer>
-            </Modal>
+            <h1>Add a new habit</h1>
+            <FormControl ref={titleInput} placeholder="Title" />
+            <FormControl ref={instructionInput} placeholder="Instructions" />
+            <FormControl ref={habitDaysInput} placeholder="Habit days" />
+            <Button className="Button primary" onClick={handleCreateHabit}>
+                Create Habit
+            </Button>
         </div>
+        
+        <section>
+        <h1>List of habits</h1>
+            {habits?.map((habit) => (
+                <div key={habit.id} className ="border py-2 px-4 rounded flex flex-col items-center mb-2">
+                    <h2>{habit.title}</h2>
+                    <Button className="Button danger" onClick={() => handleDelete(habit.id)}>Delete</Button>
+                    <Button className="Button info" onClick={() => handleToggleDetails(habit.id || '')}> 
+                        {selectedHabit && selectedHabit.id === habit.id ? 'Hide Details' : 'Show Details'}
+                    </Button>
+                    <Button className="Button primary" onClick={() => handleEdit(habit)}>Edit</Button>
+                    {selectedHabit && selectedHabit.id === habit.id && (
+                        <div> 
+                            <p>{selectedHabit.instruction}</p>
+                            <p>{selectedHabit.habitDays}</p>
+                        </div>
+                    )}
+                </div>
+            ))}
+        </section>
+
+        <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
+            <Modal.Title><h2>Edit habit</h2></Modal.Title>
+            <Modal.Body>
+                <Form>
+                    <br /> 
+                    <Form.Group controlId="editTitle">
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control type="text" placeholder="Enter new instructions" value={updateHabit?.title} onChange={(e) => setUpdateHabit({ ...updateHabit, title: e.target.value })} />
+                    </Form.Group>
+                    <br />  
+                    <Form.Group controlId="editInstruction">
+                        <Form.Label>Instruction</Form.Label>
+                        <Form.Control type="text" placeholder="Enter new instructions" value={updateHabit?.instruction} onChange={(e) => setUpdateHabit({ ...updateHabit, instruction: e.target.value })} />
+                    </Form.Group>
+                    <br />  
+                    <Form.Group controlId="editHabitDays">
+                        <Form.Label>Habit Days</Form.Label>
+                        <Form.Control type="text" placeholder="Enter new habit days" value={updateHabit?.habitDays} onChange={(e) => setUpdateHabit({ ...updateHabit, habitDays: e.target.value })} />
+                    </Form.Group>
+                    <br /> 
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button className="Button primary" onClick={() => setShowEditModal(false)}>Close</Button>
+                <Button className="Button primary" onClick={handleUpdateHabit}>Save Changes</Button>
+            </Modal.Footer>
+        </Modal>
+
+     </div>
     );
 };
 export default HabitList;

@@ -2,6 +2,7 @@
 <head>
     <link href=@Url.Content("~/styles/app.css") rel="stylesheet" type="text/css" />
 </head>
+<div class="container">
 <form asp-controller="Auth" asp-action="Login" method="post">
     <input type="hidden" asp-for="ReturnUrl" />
     <div class="header">Login</div>
@@ -21,3 +22,4 @@
     <a asp-controller="Auth" asp-action="Register"
        asp-route-returnUrl="@Model.ReturnUrl" class="switch-button">Register</a>
 </form>
+</div>

@@ -1,38 +1,68 @@
-﻿.input {
-    font-size: 16px;
-    font-family: Arial;
-    background-color: #fff;
-    width: 100%;
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
-    font-family: Arial;
-    color: #000133;
     font-size: 30px;
+    color: #000133;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.block {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .button {
-    font-size: 16px;
-    background-color: #333300;
-    border-radius: 4px;
-    color: #331a00;
-    font-family: Arial;
     width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #141414;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-
-.block {
-    margin-top: 10px;
-}
+    .button:hover {
+        background-color: #6e6d6d;
+    }
 
 .switch-button {
-    margin-top: 8px;
-    font-size: 8px;
-    border-radius: 4px;
-    color: #333300;
-    font-family: Arial;
-    display: inline-block;
+    display: block;
+    font-size: 16px;
     text-align: center;
-    width: 100%;
+    margin-top: 10px;
+    color: #333300;
+    text-decoration: none;
 }
+
+    .switch-button:hover {
+        color: #331a00;
+    }

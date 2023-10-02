@@ -12,8 +12,24 @@ const App: FC<{}> = (): ReactElement => {
     return (
         <div className="App">
             <header className="App-header"> 
-                <button onClick={() => signinRedirect()}>Login</button>
-                <button onClick={() => signoutRedirect()}>Logout</button>
+                <div className = "header">   
+                    <div className = "header__body">
+                        <nav className = "header__menu">
+                                <ul className = "header__list">
+                                    <li>
+                                        <a onClick={() => signinRedirect()} className = "header__link">  
+                                            Login
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => signoutRedirect()}className = "header__link">
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                        </nav>                        
+                    </div> 
+                </div>
                 <AuthProvider userManager={userManager}>
                     <Router>    
                         <Routes>
